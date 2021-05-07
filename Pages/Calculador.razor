@@ -1,0 +1,46 @@
+﻿<h3>Calculador</h3>
+
+@page "/Calculador"
+
+<div>
+    <div>
+        <label>Ingrese el primer numero</label>
+        <input @bind="Primer_Numero" />
+    </div>
+
+    <div>
+        <label>Ingrese el segundo numero</label>
+        <input @bind="Segundo_Numero" />
+    </div>
+
+    <div>
+        
+        <button class="btn btn btn-dark"@onclick="Calcular">Calcular Operacciones</button>
+    </div>
+
+    <div>
+        <p>La suma de los dos numeros: @Suma</p>
+        <p>La Resta de los dos numeros: @Resta</p>
+        <p>La Multiplicacion de los dos numeros: @Multiplicacion</p>
+        <p>La Division de los dos numeros: @Division</p>
+    </div>
+
+</div>
+
+
+@code {
+
+    float Primer_Numero;
+    float Segundo_Numero;
+    float Suma, Resta, Multiplicacion, Division;
+
+    private void Calcular()
+    {
+        Math.Round(Suma = Primer_Numero + Segundo_Numero);
+        Math.Round(Resta = Primer_Numero - Segundo_Numero);
+        Math.Round(Multiplicacion = Primer_Numero * Segundo_Numero);
+        Math.Round(Division = Primer_Numero / Segundo_Numero);
+
+    }
+    
+}
